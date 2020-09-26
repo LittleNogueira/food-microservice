@@ -49,7 +49,7 @@
 					<artifactId>junit-vintage-engine</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>x
+		</dependency>
 
 		<dependency>
 			<groupId>org.mapstruct</groupId>
