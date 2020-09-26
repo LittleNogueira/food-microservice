@@ -28,7 +28,7 @@ public class RestaurantController {
 
     @GetMapping("/{idRestaurant}/foods")
     public ResponseEntity<List<FoodDto>> getFoodsByRestaurant(@PathVariable Long idRestaurant) {
-        return ResponseEntity.ok().body(FoodMapper.map(restauranteService.getFoods(idRestaurant)));
+        return ResponseEntity.ok().body(FoodMapper.INSTANCE.entityToResponse(restauranteService.getFoods(idRestaurant)));
     }
     
 }
