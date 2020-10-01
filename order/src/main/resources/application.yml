@@ -1,6 +1,5 @@
-
 server:
-    port: 8081
+    port: 8082
     servlet:
         context-path: /api
 
@@ -11,14 +10,14 @@ eureka:
 
 spring:
     application:
-        name: restaurant
+        name: order
     datasource:
         driverClassName: org.h2.Driver
         password: password
-        url: jdbc:h2:mem:restaurant
+        url: jdbc:h2:mem:order
         username: sa
     h2:
         console:
             enabled: true
     jpa:
-        database-platform: org.hibernate.dialect.H2Dialect
+        database-platform: org.hibernate.dialect.H2Dialect  
