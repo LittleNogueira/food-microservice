@@ -3,6 +3,7 @@ package br.com.food.order.forms;
 import java.util.List;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import br.com.food.order.enums.Payment;
@@ -13,7 +14,7 @@ public class OrderForm {
     @NotNull
     private AddressForm address;
 
-    @NotNull
+    @NotEmpty
     private List<Long> foods;
 
     private Payment payment;
