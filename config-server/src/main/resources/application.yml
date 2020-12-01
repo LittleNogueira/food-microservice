@@ -6,4 +6,5 @@ spring:
         config:
             server:
                 git:
-                    uri: https://github.com/LittleNogueira/food-microservice/configs
+                    uri: https://github.com/LittleNogueira/food-microservice
+                    search-paths: configs/order
