@@ -39,12 +39,13 @@ public class RestaurantService {
     private ValidOrderDto validOrder(List<Food> foods){
         ValidOrderDto dto = new ValidOrderDto();
 
-//        if(foods.isEmpty())
-//            dto.setValid(Boolean.FALSE);
-//            return dto;
-//        }
-
+        if(foods.isEmpty()) {
+            dto.setValid(Boolean.FALSE);
+            return dto;
+        }
+        
         Restaurant restaurant = foods.get(0).getRestaurant();
+        
         dto.setValid(foods.stream().allMatch(food -> food.getRestaurant().getId().equals(restaurant.getId())));
         dto.setFinalValue(foods.stream().map(Food::getValue).reduce(BigDecimal.ZERO, (a, b) -> a.add(b)));
 

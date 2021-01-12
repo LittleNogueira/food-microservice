@@ -5,4 +5,5 @@ INSERT INTO restaurant(id,name,created_at, updated_at) VALUES
 
 INSERT INTO food(name,value,description,id_restaurant) VALUES
     ('Tonkatsu',25,'Porco empanado',3),
-    ('Gioza',25,'Pastel japones',3);  
+    ('Gioza',25,'Pastel japones',3),
+    ('Chesse burguer',20,'Um sanduiche de queijo',1);	
