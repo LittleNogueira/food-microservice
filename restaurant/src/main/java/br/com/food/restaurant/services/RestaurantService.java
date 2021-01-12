@@ -4,9 +4,12 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.food.restaurant.controllers.RestaurantController;
 import br.com.food.restaurant.dtos.ValidOrderDto;
 import br.com.food.restaurant.entities.Food;
 import br.com.food.restaurant.entities.Restaurant;
@@ -16,6 +19,8 @@ import br.com.food.restaurant.repositories.RestaurantRepository;
 
 @Service
 public class RestaurantService {
+	
+    private static Logger Logger = LoggerFactory.getLogger(RestaurantService.class);
     
     @Autowired
     private RestaurantRepository restaurantRepository;
@@ -24,14 +29,17 @@ public class RestaurantService {
     private FoodRepository foodRepository;
 
     public List<Restaurant> getAll(){
+    	Logger.info("Chamada de serviço para listar todos os restaurantes");
         return restaurantRepository.findAll();
     }
 
     public List<Food> getFoods(Long idRestaurant){
+    	Logger.info("Chamada de serviço para listar todos os pratos do restaurante de id {}", idRestaurant);
         return foodRepository.findByRestaurantId(idRestaurant);
     }
 
     public ValidOrderDto validOrder(ValidOrderForm validOrderForm){
+    	Logger.info("Chamada de serviço para validar o pedido {}", validOrderForm);
         List<Food> foods = foodRepository.findByIdIn(validOrderForm.getFoods());
         return validOrder(foods);
     }
