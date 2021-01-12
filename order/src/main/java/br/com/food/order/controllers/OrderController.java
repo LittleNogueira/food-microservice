@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.food.order.clients.RestaurantClient;
 import br.com.food.order.dtos.ValidOrderDto;
 import br.com.food.order.forms.OrderForm;
-import br.com.food.restaurant.controllers.RestaurantController;
 
 @RestController
 @RequestMapping(path = "/orders")

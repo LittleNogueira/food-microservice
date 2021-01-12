@@ -49,6 +49,9 @@ public class RestaurantService {
 
         if(foods.isEmpty()) {
             dto.setValid(Boolean.FALSE);
+            
+        	Logger.info("Chamada de serviço para validar realizado {}", dto);
+            
             return dto;
         }
         
@@ -57,6 +60,8 @@ public class RestaurantService {
         dto.setValid(foods.stream().allMatch(food -> food.getRestaurant().getId().equals(restaurant.getId())));
         dto.setFinalValue(foods.stream().map(Food::getValue).reduce(BigDecimal.ZERO, (a, b) -> a.add(b)));
 
+    	Logger.info("Chamada de serviço para validar realizado {}", dto);
+        
         return dto;
     }
     
