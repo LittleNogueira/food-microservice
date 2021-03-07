@@ -23,7 +23,9 @@ public class OrderService {
 	@Autowired
 	private OrderRepository orderRepository;
 	
-	@HystrixCommand(fallbackMethod = "createOrderFallback", ignoreExceptions = {NotAcceptableStatusException.class})
+	@HystrixCommand(fallbackMethod = "createOrderFallback", 
+			ignoreExceptions = {NotAcceptableStatusException.class}, 
+			threadPoolKey = "createOrderThreadPoolKey")
 	public Order createOrder(OrderForm orderForm) {
 		ValidOrderDto validOrderDto = client.validOrder(orderForm);
 		
