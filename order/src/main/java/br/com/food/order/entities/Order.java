@@ -1,7 +1,9 @@
 package br.com.food.order.entities;
 
 import java.math.BigDecimal;
+import java.util.List;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,6 +24,9 @@ public class Order {
 	
 	private BigDecimal finalValue;
 	
+	@ElementCollection
+	private List<Long> foods;
+	
 	public Order() {
 		this.status = Status.CREATING;
 	}
@@ -29,7 +34,7 @@ public class Order {
 	public Long getId() {
 		return id;
 	}
-	
+
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -50,9 +55,17 @@ public class Order {
 		this.finalValue = finalValue;
 	}
 
+	public List<Long> getFoods() {
+		return foods;
+	}
+
+	public void setFoods(List<Long> foods) {
+		this.foods = foods;
+	}
+
 	@Override
 	public String toString() {
-		return "Order [id=" + id + ", status=" + status + ", finalValue=" + finalValue + "]";
+		return "Order [id=" + id + ", status=" + status + ", finalValue=" + finalValue + ", foods=" + foods + "]";
 	}
 
 }

@@ -46,13 +46,6 @@ public class RestaurantService {
 
     private ValidOrderDto validOrder(List<Food> foods){
     	
-//    	try { isto é para causa o circuit break no servico de pedidos
-//			Thread.sleep(2000);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-        
     	ValidOrderDto dto = new ValidOrderDto();
 
         if(foods.isEmpty()) {

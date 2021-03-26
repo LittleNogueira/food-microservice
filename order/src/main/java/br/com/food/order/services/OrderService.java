@@ -34,6 +34,7 @@ public class OrderService {
 		}
 		
 		Order order = OrderMapper.INSTANCE.requestToEntity(validOrderDto);
+		order = OrderMapper.INSTANCE.update(order, orderForm);
 		order.setStatus(Status.CREATED);
 		
 		return orderRepository.save(order);
