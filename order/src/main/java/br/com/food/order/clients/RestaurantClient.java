@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import br.com.food.order.dtos.ValidOrderDto;
 import br.com.food.order.forms.OrderForm;
 
-@FeignClient(name = "restaurant", path = "/api/restaurants")
+@FeignClient(name = "restaurant", path = "/restaurants")
 public interface RestaurantClient {
     
     @PostMapping("/foods/valid-order")

@@ -23,7 +23,6 @@ import br.com.food.restaurant.mappers.FoodMapper;
 import br.com.food.restaurant.services.RestaurantService; 
 
 @RestController
-@RequestMapping(path = "/restaurants")
 public class RestaurantController {
 	
     private static Logger Logger = LoggerFactory.getLogger(RestaurantController.class);

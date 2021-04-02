@@ -17,7 +17,6 @@ import br.com.food.order.forms.OrderForm;
 import br.com.food.order.services.OrderService;
 
 @RestController
-@RequestMapping(path = "/orders")
 public class OrderController {
 	
     private static Logger Logger = LoggerFactory.getLogger(OrderController.class);
