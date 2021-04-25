@@ -1,0 +1,10 @@
+server:
+  port: 8088
+  
+security:
+  oauth2:
+    client:
+      client-id: order
+      client-secret: orderpwd
+      scope:
+      - web
