@@ -18,6 +18,8 @@ zuul:
     restaurant:
       path: /restaurants/**
       serviceId: restaurant
+  sensitive-headers:
+  - Authorization, Cookie 
       
 management:
   endpoints:
@@ -25,3 +27,4 @@ management:
       exposure:
         include:
         - "routes"
+        
