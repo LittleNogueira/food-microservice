@@ -2,7 +2,7 @@
 
 ## About project
 
-The principal objective of this project is study a little about micro services, used spring config, spring sleuth, feign client, circuit breaker, bulkhead, service discovery, zuul gateway and auth server.
+The principal objective of this project is study a little about micro services, i used spring config, spring sleuth, feign client, circuit breaker, bulkhead, service discovery, zuul gateway and auth server.
 
 ## Setup Instructions
 
